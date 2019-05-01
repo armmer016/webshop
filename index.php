@@ -79,8 +79,8 @@ if(isset($_POST['truemoney'])) { // ตรวจสอบว่ามีกด�
         $iamount = str_replace("[amount]",$amount,$player);
         $explode = explode("[and] ", $iamount);
 
-        foreach ($explode as $kuy) {
-          $rcon->sendCommand($kuy);
+        foreach ($explode as $test) {
+          $rcon->sendCommand($test);
         }
         file_put_contents("success.txt", "ผู้เล่น ".$_POST['username']. " ได้เติมเงินเมื่อวันที่  ".$time."   สถานะ : สำเร็จ (".$_POST['truemoney']." : ".$itopup['amount'].")".PHP_EOL, FILE_APPEND);
         exit('<div class="alert alert-success"><i class="fas fa-check-square"></i>&nbsp;ว้าวว มึงเติมเงินสำเร็จแล้วนะ <br> จำนวน '.$itopup['amount'].' <br> ได้รับเงินในเกม '.$amount.'</div>');
